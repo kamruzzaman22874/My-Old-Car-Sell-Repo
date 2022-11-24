@@ -5,7 +5,7 @@ import { FcGoogle } from 'react-icons/fc';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-const {userLogin} = useContext(AuthContext)
+const {userLogin , googleSignIn} = useContext(AuthContext)
 
     const handleLogin = event =>{
         event.preventDefault()
@@ -14,7 +14,7 @@ const {userLogin} = useContext(AuthContext)
         const password = form.password.vlaue;
         console.log(email , password);
 
-        userLogin(email , password)
+        userLogin(email ,password)
         .then(result =>{
             const user = result.user;
             console.log(user);
@@ -24,13 +24,23 @@ const {userLogin} = useContext(AuthContext)
         })
         .catch(err => console.error(err))
     }
+
+    const handleGoogleSignIn =()=>{
+        googleSignIn()
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+            toast.success('Login Successfull')
+        })
+    }
+
     return (
-        <div className='hero  bg-gray-300'>
+        <div className='hero'>
 				<div className='hero-content flex-col'>
 					
 					<form
 						onSubmit={handleLogin}
-						className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-300'
+						className='card flex-shrink-0 w-full max-w-sm shadow-2xl'
 					>
 						<div className='card-body'>
 							<div className='form-control'>
@@ -69,18 +79,12 @@ const {userLogin} = useContext(AuthContext)
 									 Sign Up
 								</Link>
 							</p>
-							<button  className='btn btn-warning mb-2'>
+							<button onClick={handleGoogleSignIn} className='btn btn-warning mb-2'>
 								<span className='text-2xl'>
 									<FcGoogle></FcGoogle>
 								</span>
 								<span className='px-2'>Google Sign In</span>
 							</button>
-							{/* <button onClick={githubSignIn} className='btn btn-warning'>
-								<span className='text-2xl'>
-									<BsGithub></BsGithub>
-								</span>
-								<span className='px-2'>Github Sign In</span>
-							</button> */}
 						</div>
 					</form>
 				</div>
