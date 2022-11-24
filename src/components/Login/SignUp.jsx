@@ -2,9 +2,10 @@ import { error } from 'daisyui/src/colors';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignUp = () => {
-    const {userSignIn} = useContext(AuthContext)
+    const {userCreate} = useContext(AuthContext)
     const handleCreateUser =  event =>{
         event.preventDefault()
         const form = event.target
@@ -13,19 +14,18 @@ const SignUp = () => {
         const password = form.password.value
         console.log(name, email , password);
 
-
-
-
-        userSignIn(email , password)
+        userCreate(email , password)
         .then(result =>{
             const user = result.user;
             console.log(user);
+            toast.success('user create successfully')
+            form.reset()
         })
         .catch(error => console.error(error))
     }
 
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen bg-gray-300">
   <div className="hero-content flex-col">
     <form onSubmit={handleCreateUser} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
       <div  className="card-body">
