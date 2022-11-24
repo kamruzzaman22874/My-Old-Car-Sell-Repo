@@ -31,11 +31,12 @@ const handleLogin =  event =>{
             const user = result.user;
             console.log(user);
             toast.success('Login Successfull')
+			
         })
     }
 
     return (
-        <div className="hero min-h-screen">
+        <div className="hero  py-10">
   <div className="hero-content flex-col">
     <form onSubmit={handleLogin} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
       <div  className="card-body">
@@ -61,6 +62,13 @@ const handleLogin =  event =>{
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
+        </div>
+        <div className="form-control mt-6">
+			
+          <button onClick={handleGoogleSignIn} className="btn btn-primary">
+		  <FcGoogle className='text-xl mr-2'></FcGoogle>
+			<span>Google Login</span>
+			</button>
         </div>
       </div>
     </form>
