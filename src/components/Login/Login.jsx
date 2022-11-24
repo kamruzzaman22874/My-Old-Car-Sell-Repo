@@ -18,7 +18,7 @@ const handleLogin =  event =>{
 	.then(result =>{
 		const user = result.user;
 		console.log(user);
-		toast.success('user create successfully')
+		toast.success('user login successfully')
 		form.reset()
 	})
 	.catch(error => console.error(error))
@@ -55,13 +55,13 @@ const handleLogin =  event =>{
             <a href="#" className="link link-hover">Forgot password?</a>
           </label>
           <div className='flex'>
-          <p className='mr-2'>Already have an account? please</p>
-          <Link to='/login' className='underline'> Login</Link>
+          <p className='mr-2'>Create a new account please</p>
+          <Link to='/signup' className='underline'>SignUp</Link>
           </div>
           
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn bg-green-500 hover:bg-green-600 border-0">Login</button>
         </div>
         <div className="form-control mt-6">
 			

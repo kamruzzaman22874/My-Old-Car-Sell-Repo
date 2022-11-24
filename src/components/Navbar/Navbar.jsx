@@ -4,7 +4,7 @@ import Home from '../Home/Home';
 const Navbar = () => {
     const menuItems = <React.Fragment>
             <li><Link to='/'>Home</Link></li>
-            <li><Link to='/advertiseitem'>Advertise Items</Link></li>
+            <li><Link to='/faq'>FAQ</Link></li>
             <li><Link to='/about'>Product Category</Link></li>
             <li><Link to='/login'>Login</Link></li>
             {/* <li><Link to='/dashboard'>Dashboard</Link></li> */}
