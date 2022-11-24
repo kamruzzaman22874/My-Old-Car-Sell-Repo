@@ -5,7 +5,7 @@ const Login = () => {
     return (
         <div className="hero min-h-screen">
   <div className="hero-content flex-col">
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
       <div className="card-body">
         <div className="form-control">
           <label className="label">
@@ -27,8 +27,8 @@ const Login = () => {
           </div>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
-          <button className="btn btn-primary mt-2">Google Login</button>
+          <button className="btn btn-info">Login</button>
+          <button className="btn btn-info mt-2">Google Login</button>
         </div>
       </div>
     </div>

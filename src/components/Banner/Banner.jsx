@@ -8,7 +8,7 @@ const Banner = () => {
           <div>
             <h1 className="text-5xl font-bold">Old Cars Sells</h1>
             <p className="py-6">Find the best deals on cars from the trusted dealers and sellers in Bangladesh Old Cars Hatbazar.Its a popular and famous for old cars sell in Bangladesh.</p>
-            <button className="btn btn-info">Get Started</button>
+            <button className="btn btn-info">Booking Now</button>
           </div>
         </div>
       </div>
