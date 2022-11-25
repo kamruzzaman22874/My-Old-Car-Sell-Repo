@@ -18,8 +18,8 @@ const Navbar = () => {
       } */}
     </React.Fragment>
     return (
-        <section>
-            <div className="navbar shadow-lg mt-2 rounded flex justify-around">
+        <section className='shadow-lg'>
+            <div className="navbar mt-2 rounded flex justify-around">
                 <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

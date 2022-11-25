@@ -1,11 +1,20 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FcGoogle } from 'react-icons/fc';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-const {userLogin , googleSignIn} = useContext(AuthContext)
+const {userLogin , googleSignIn,loading} = useContext(AuthContext)
+const [user , setUser] = useState()
+const location = useLocation()
+const navigate = useNavigate()
+
+const path = location.state?.path?.pathname || '/'
+
+if(loading){
+	return <progress className="progress w-56"></progress>
+}
 
 const handleLogin =  event =>{
 	event.preventDefault()

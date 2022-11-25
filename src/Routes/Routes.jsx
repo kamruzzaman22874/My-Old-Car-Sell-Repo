@@ -6,6 +6,7 @@ import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import SignUp from "../components/Login/SignUp";
 import Main from "../Layout/Main";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/faq',
-                element:<FAQ></FAQ>
+                element:<PrivateRoutes><FAQ></FAQ></PrivateRoutes>
             },
             {
                 path:'/addproduct',
