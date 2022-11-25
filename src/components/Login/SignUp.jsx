@@ -5,7 +5,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
 const SignUp = () => {
-    const {userCreate} = useContext(AuthContext)
+    const {userCreate,userProfile} = useContext(AuthContext)
     const handleCreateUser =  event =>{
         event.preventDefault()
         const form = event.target
@@ -18,10 +18,20 @@ const SignUp = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            updateUserDetails(name)
             toast.success('user create successfully')
             form.reset()
         })
         .catch(error => console.error(error))
+    }
+    const updateUserDetails = (name)=>{
+      userProfile(name)
+      .then(()=>{
+        
+      })
+      .catch(err =>{
+        console.log(err)
+      })
     }
 
     return (

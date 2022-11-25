@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "name": "amazon",
+      "description": "Here is the all products of this categories . You can see all products . For see all products click see all button.",
+      "img": "https://i.ibb.co/CWVXSwG/download-2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "tasla",
+      "description": "Here is the all products of this categories . You can see all products . For see all products click see all button.",
+      "img": "https://i.ibb.co/jzrYqLL/download-3.jpg"
+    },
+    {
+      "id": 3,
+      "name": "pajeroo",
+      "description": "Here is the all products of this categories . You can see all products . For see all products click see all button.",
+      "img": "https://i.ibb.co/jzrYqLL/download-3.jpg"
+    }
+]

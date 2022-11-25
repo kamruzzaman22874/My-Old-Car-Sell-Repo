@@ -25,9 +25,8 @@ const FAQ = () => {
 			<details>
 				<summary className="py-2 outline-none cursor-pointer text-xl font-semibold">What is a unit test? Why should we write unit tests?</summary>
 				<div className="px-4 pb-4 space-y-2 text-xl">
-					<p className='text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates aspernatur dolores in consequatur doloremque inventore reprehenderit, consequuntur perspiciatis architecto.
-                    The main objective of unit testing is to isolate written code to test and determine if it works as intended.
-                    Unit testing is an important step in the development process, because if done correctly, it can help detect early flaws in code which may be more difficult to find in later testing stages..</p> <br />
+                <span className='text-xl underline font-bold'>What is a unit test? : </span>
+					<p className='text-justify'>A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in a system. In most programming languages, that is a function, a subroutine, a method or property. The isolated part of the definition is important. In his book "Working Effectively with Legacy Code", author Michael Feathers states that such tests are not unit tests when they rely on external systems: “If it talks to the database, it talks across the network, it touches the file system, it requires system configuration, or it can't be run at the same time as any other test."</p> <br />
                     <span className='text-xl underline font-bold'>How unit tests work : </span>
                     <p className='text-justify'>A unit test typically comprises of three stages: plan, cases and scripting and the unit test itself. In the first step, the unit test is prepared and reviewed. The next step is for the test cases and scripts to be made, then the code is tested.
                     Test-driven development requires that developers first write failing unit tests. Then they write code and refactor the application until the test passes. TDD typically results in an explicit and predictable code base.</p>

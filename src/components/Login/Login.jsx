@@ -10,6 +10,7 @@ const {userLogin , googleSignIn} = useContext(AuthContext)
 const handleLogin =  event =>{
 	event.preventDefault()
 	const form = event.target
+	console.log(form);
 	const email = form.email.value;
 	const password = form.password.value
 	console.log( email , password);
@@ -65,7 +66,7 @@ const handleLogin =  event =>{
         </div>
         <div className="form-control mt-6">
 			
-          <button onClick={handleGoogleSignIn} className="btn btn-primary">
+          <button onClick={handleGoogleSignIn} className="btn bg-green-500 hover:bg-green-600 border-0">
 		  <FcGoogle className='text-xl mr-2'></FcGoogle>
 			<span>Google Login</span>
 			</button>
