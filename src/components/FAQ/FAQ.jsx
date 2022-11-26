@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const FAQ = () => {
-	const {loading} = useContext(AuthContext)
+	// const {loading} = useContext(AuthContext)
 
-	if(loading){
-		return<progress className="progress w-56"></progress>
-	}
+	// if(loading){
+	// 	return<progress className="progress w-56"></progress>
+	// }
     return (
         <section className="dark:bg-gray-800 dark:text-gray-100">
 	<div className="container flex flex-col justify-center p-4 mx-auto md:p-8">

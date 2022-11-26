@@ -20,13 +20,14 @@ const Home = () => {
         <div className='mx-auto'>
             <Banner></Banner>
             {/* <UniqueSection></UniqueSection> */}
-           <div className='grid grid-cols-3 mt-10 px-24'>
+           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8 px-2'>
            {
                 servicesData?.map(data=> <Category
                 data={data}
                 ></Category>)
             }
            </div>
+           <UniqueSection></UniqueSection>
 
 
            

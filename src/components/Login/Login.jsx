@@ -7,14 +7,16 @@ import toast, { Toaster } from 'react-hot-toast';
 const Login = () => {
 const {userLogin , googleSignIn,loading} = useContext(AuthContext)
 const [user , setUser] = useState()
-const location = useLocation()
-const navigate = useNavigate()
+const navigate = useNavigate();
+const location = useLocation();
+console.log(location);
 
-const path = location.state?.path?.pathname || '/'
+    const from = location.state?.from?.pathname || "/";
+	console.log(from);
 
-if(loading){
-	return <progress className="progress w-56"></progress>
-}
+// if(loading){
+// 	return <progress className="progress w-56"></progress>
+// }
 
 const handleLogin =  event =>{
 	event.preventDefault()
@@ -28,6 +30,7 @@ const handleLogin =  event =>{
 	.then(result =>{
 		const user = result.user;
 		console.log(user);
+		navigate(from, { replace: true })
 		toast.success('user login successfully')
 		form.reset()
 	})

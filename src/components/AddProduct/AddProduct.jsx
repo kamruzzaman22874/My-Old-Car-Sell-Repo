@@ -18,7 +18,7 @@ const AddProduct = () => {
 	const navigate = useNavigate();
 	//! from .env.local file====>
 	const imgHostKey = process.env.REACT_APP_Imgbb_key;
-	// console.log(imgHostKey);
+	console.log(imgHostKey);
 
 	const handleAddedProduct = (data) => {
 		const image = data?.img[0];
