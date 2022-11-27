@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const UniqueSection = () => {
     return (
@@ -46,7 +45,7 @@ const UniqueSection = () => {
 						</div>
 					</div>
 				</div>
-                <marquee className="text-3xl text-green-400 font-bold hidden lg:block">Please visit our Show room and Collect Your best choise</marquee>
+                <marquee className="text-3xl text-green-400 font-bold hidden lg:block">Please visit our Show room and Collect Your best choice</marquee>
 			</section>
     )
 }

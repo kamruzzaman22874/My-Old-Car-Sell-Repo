@@ -6,7 +6,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const AddProduct = () => {
 
-	const {user, loader} = useContext(AuthContext)
+	const {user} = useContext(AuthContext)
 	const {
 		register,
 		handleSubmit,
@@ -17,15 +17,15 @@ const AddProduct = () => {
 
 	const navigate = useNavigate();
 	//! from .env.local file====>
-	const imgHostKey = process.env.REACT_APP_Imgbb_key;
-	console.log(imgHostKey);
+	const imgHostKey = 'cd464a04ac53e69e3e8ecd326727cf71';
+	// console.log(imgHostKey);
 
 	const handleAddedProduct = (data) => {
 		const image = data?.img[0];
 		// console.log(image);
 		const formData = new FormData();
 		formData.append('image', image);
-		const url = `https://api.imgbb.com/1/upload?key=${imgHostKey}`;
+		const url = `https://i.ibb.co/mTYyBhL/corolla5.jpg?key=${imgHostKey}`;
 		fetch(url, {
 			method: 'POST',
 			body: formData,
@@ -37,7 +37,7 @@ const AddProduct = () => {
 					// console.log(imgData.data.url)
 
 					const addedProduct = {
-						author: user.displayName,
+						author: user?.displayName,
 						title: data.title,
 						location: data.location,
 						category: data.category,
@@ -49,11 +49,12 @@ const AddProduct = () => {
 						image: imgData.data.url,
 						time,
 					};
-					// console.log(addedProduct);
+                    
+					console.log(addedProduct);
 
 
 					//! Save addedProducts info to the database....
-					fetch('http://localhost:5000/products', {
+					fetch('http://localhost:5000/oldcars', {
 						method: 'POST',
 						headers: {
 							'content-type': 'application/json',
@@ -83,11 +84,11 @@ const AddProduct = () => {
                         className='card-body'
                     >
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-3'>
-                            <div className='form-control w-full max-w-xs'>
+                            <div className='form-control w-full'>
                                 <label className='label'>
                                     <span className='label-text'>Product Title</span>
                                 </label>
-                                <input
+                                <input 
                                     type='text'
                                     {...register('title', {
                                         required: 'Title is Required',
