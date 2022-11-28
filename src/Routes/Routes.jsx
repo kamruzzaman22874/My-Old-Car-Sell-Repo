@@ -13,6 +13,9 @@ import FAQ from "../components/FAQ/FAQ";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import SignUp from "../components/Login/SignUp";
+import CorollaCarInfo from "../components/SingleCarInfo/CorollaCarInfo";
+import PajerooCarInfo from "../components/SingleCarInfo/PajerooCarInfo";
+import TeslaCarInfo from "../components/SingleCarInfo/TeslaCarInfo";
 import Main from "../Layout/Main";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
@@ -57,6 +60,18 @@ const router = createBrowserRouter([
             {
                 path: '/pajeroo',
                 element: <Pajeroo></Pajeroo>
+            },
+            {
+                path: '/corollagroups',
+                element: <CorollaCarInfo></CorollaCarInfo>
+            },
+            {
+                path: '/pajeroogroups',
+                element: <PajerooCarInfo></PajerooCarInfo>
+            },
+            {
+                path: '/teslagroups',
+                element: <TeslaCarInfo></TeslaCarInfo>
             },
             {
                 path: '/category/:id',

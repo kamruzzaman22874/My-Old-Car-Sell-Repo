@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Corrolla = () => {
 		const { data: corollagroup } = useQuery({
@@ -31,7 +32,7 @@ const Corrolla = () => {
 					<p>Original Price: ${data.original}</p>
 					<p>Years of Use: {data.purchase}</p>
 					<div className="card-actions w-full text-center">
-						<button className='btn btn-info w-full'>Show Details</button>
+						<Link to='/corollagroups' className='btn btn-info w-full text-white'>Show Details</Link>
 					</div>
 				</div>
 				</div>
