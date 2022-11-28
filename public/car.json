@@ -1,0 +1,112 @@
+[
+    {
+      "categoryId":"1",
+      "originalPrice":"$20 Million",
+      "picture": "https://cdn.motor1.com/images/mgl/1ALLW/s1/2019-mercedes-amg-g63-edition-1.webp",
+      "price": "$10 million",
+      "location": "Dhaka, Gulshan",
+      "name": "Mercedes-AMG G63",
+      "yearsOfUse": "2 Years",
+      "time": "24 November 2022",
+      "sellersName": "Kamruzzaman",
+      "details": "Discover exclusive articles and current campaigns from the fascinating world of Mercedes-Benz."
+    },
+    {
+      "categoryId":"2",
+      "originalPrice": "$11 million",
+      "picture": "https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?cs=srgb&dl=pexels-jae-park-3752169.jpg&fm=jpg",
+      "price": "$8 Million",
+      "location": "Dhaka, Dhanmondi",
+      "name": "Lamborghini",
+      "yearsOfUse": "1 Year",
+      "time": "26 november 2022",
+      "sellersName": "Kamruzzaman",
+      "details": "Lamborghini Official Website: find Lamborghini models, new releases, latest news, events, and the dealers across the world."
+    },
+    {
+      "categoryId": "3",
+      "originalPrice": "$13 million",
+      "picture": "https://cdn.carbuzz.com/car-thumbnails/700x375/2000/900/2949.jpg",
+      "price": "9 Million",
+      "location": "Dhaka, Banani",
+      "name": "Porsche",
+      "yearsOfUse": "3 years",
+      "time": "10 November 2022",
+      "sellersName": "Kamruzzaman",
+      "details": "Welcome to Porsche! Find information on all Porsche vehicles, services, dealers in your area and everything about the Porsche brand right here."
+    },
+
+    {
+     "categoryId":"1",
+      "originalPrice": "$20 Million",
+      "picture": "https://topelectricsuv.com/wp-content/uploads/2021/11/Tesla-Model-2-front-three-quarter-right-rendering.jpg",
+      "price": "$10 million",
+      "location": "Dhaka, Gulshan",
+      "name": "Tesla Model 2",
+      "yearsOfUse": "2 Years",
+      "time": "24 November 2022",
+      "sellersName": "MD Yiaz",
+      "details": "Tesla's Model S was the first mass-market car to prove that EVs can be exciting to drive, viable as daily transportation, and usable for long trips."
+    },
+    {
+      "categoryId":"2",
+      "originalPrice": "$11 million",
+      "picture": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F09%2Flucid-motors-lucid-air-1080-hp-electric-car-luxury-sedan-official-first-look-tw.jpg?w=960&cbr=1&q=90&fit=max",
+      "price": "$8 Million",
+      "location": "Dhaka, Dhanmondi",
+      "name": "Lucid Motors",
+      "yearsOfUse": "1 Year",
+      "time": "26 november 2022",
+      "sellersName": "MD Riaz",
+      "details": "Lucid is the future of sustainable mobility, designing luxury electric cars that further reimagines the driving experience."
+    },
+    {
+     "categoryId":"3",
+      "originalPrice": "$13 million",
+      "picture": "https://cdn.dlron.us/static/dealer-9844/96378-nocs-lp-altima-hero.jpg",
+      "price": "9 Million",
+      "location": "Dhaka, Banani",
+      "name": "Nissan",
+      "yearsOfUse": "3 years",
+      "time": "10 November 2022",
+      "sellersName": "MD Riazul Islam Riaz",
+      "details": "Shop online for the newest Nissan cars, trucks, crossovers, SUVs and electric vehicles. Explore offers, compare models, calculate payments and more."
+    },
+    {
+      "categoryId":"1",
+      "originalPrice": "$20 Million",
+      "picture": "https://4wheelerbd.com/wp-content/uploads/2020/11/suzuki-apv-microbus-mazenda.jpg",
+      "price": "$10 million",
+      "location": "Dhaka, Gulshan",
+      "name": "Suzuki APV Microbus",
+      "yearsOfUse": "2 Years",
+      "time": "24 November 2022",
+      "sellersName": "MD Yiaz",
+      "details": "The Suzuki APV Microbus is a light commercial vehicle designed by Suzuki. This light commercial vehicle was designed by Suzuki in Japan and manufactured in Indonesia by Suzuki Indomobil Motor. "
+    },
+    {
+     "categoryId":"2",
+      "originalPrice": "$11 million",
+      "picture": "https://image.made-in-china.com/202f0j00qRDYQUZPBGgp/Kingstar-VF4-7-8-Seats-Gasoline-Microbus-standard-type-.jpg",
+      "price": "$8 Million",
+      "location": "Dhaka, Dhanmondi",
+      "name": "Kingstar VF4",
+      "yearsOfUse": "1 Year",
+      "time": "26 november 2022",
+      "sellersName": "MD Riaz",
+      "details": "KINGSTAR VEHICLE COMPANY LIMITED was founded in 2004 and has been engaged in automobile export business ever since, with all staffs having rich experience in automobile production and export."
+    },
+    {
+      "categoryId":"3",
+      "originalPrice": "$13 million",
+      "picture": "https://img.futurecar.com/202204/07/l_624f21a28ce27.jpeg",
+      "price": "9 Million",
+      "location": "Dhaka, Banani",
+      "name": "Volkswagen",
+      "yearsOfUse": "3 years",
+      "time": "10 November 2022",
+      "sellersName": "MD Riazul Islam Riaz",
+      "details": "Volkswagen is bringing its new ID Buzz to the 2022 New York International Auto Show (NYIAS) after introducing the compact electric van at South by Southwest in Texas last month. "
+
+    }
+  ]

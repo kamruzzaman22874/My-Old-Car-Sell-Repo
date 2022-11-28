@@ -1,5 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddProduct from "../components/AddProduct/AddProduct";
+import CategoryCard from "../components/CategoryCard/CategoryCard";
+import AllByers from "../components/dashboard/AllByers";
+import AllSeller from "../components/dashboard/AllSeller/AllSeller";
+import Dashboard from "../components/dashboard/Dashboard";
+import DashboardLayout from "../components/dashboard/DashboardLayout/DashboardLayout";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import FAQ from "../components/FAQ/FAQ";
 import Home from "../components/Home/Home";
@@ -22,7 +27,7 @@ const router = createBrowserRouter([
                 element:<Home></Home>
             },
             {
-                path:'/faq',
+                path:'/blog',
                 element:<PrivateRoutes><FAQ></FAQ></PrivateRoutes>
             },
             {
@@ -35,13 +40,44 @@ const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
+                path: '/allbyers',
+                element: <AllByers></AllByers>
+            },
+            {
+
+            },
+            {
+                path: '/category/:id',
+                element: <CategoryCard></CategoryCard>,
+                // loader: ({ params }) =>
+                // fetch(`http://localhost:5000/category/${params.id}`)
+            },
+            {
+
+            },
+            {
+                path: '/allsellers',
+                element: <AllSeller></AllSeller>
+            },
+            {
                 path: '/signup',
                 element: <SignUp></SignUp>
             },
+           
             {
                 path: '*',
                 element: <ErrorPage></ErrorPage>
             }
+        ]
+    },
+    {
+        path: '/dashboard',
+        element : <DashboardLayout></DashboardLayout>,
+        children :[
+            {
+                path:'/dashboard',
+                element: <AllSeller></AllSeller>
+            },
         ]
     }
 ])

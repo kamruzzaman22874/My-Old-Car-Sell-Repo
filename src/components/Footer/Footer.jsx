@@ -6,17 +6,17 @@ const Footer = () => {
           <footer className="footer flex justify-between w-11/12 mx-auto  text-neutral-content">
         <div>
           <span className="footer-title">Services</span> 
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a className="link link-hover">Tesla</a>
+          <a className="link link-hover">Corolla</a>
+          <a className="link link-hover">Pajeroo</a>
+          <a className="link link-hover">Premio</a>
         </div> 
         <div>
           <span className="footer-title">Company</span> 
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a className="link link-hover">Toyota</a>
+          <a className="link link-hover">Marsidase</a>
+          <a className="link link-hover">Land Cruiseer</a>
+          <a className="link link-hover">Yamaha</a>
         </div> 
         <div>
           <span className="footer-title">Legal</span> 

@@ -30,11 +30,11 @@ const Home = () => {
                 ></Category>)
             }
            </div>
-           { viewCar &&
+           {/* { viewCar &&
             <CategoryModal
            viewCar={viewCar}
            ></CategoryModal>
-           }
+           } */}
            <UniqueSection></UniqueSection>
 
 

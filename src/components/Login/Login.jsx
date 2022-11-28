@@ -76,11 +76,11 @@ const handleLogin =  event =>{
           
         </div>
         <div className="form-control mt-6">
-          <button className="btn bg-green-500 hover:bg-green-600 border-0">Login</button>
+          <button className="btn btn-info hover:bg-green-600 border-0">Login</button>
         </div>
         <div className="form-control mt-6">
 			
-          <button onClick={handleGoogleSignIn} className="btn bg-green-500 hover:bg-green-600 border-0">
+          <button onClick={handleGoogleSignIn} className="btn btn-info hover:bg-green-600 border-0">
 		  <FcGoogle className='text-xl mr-2'></FcGoogle>
 			<span>Google Login</span>
 			</button>

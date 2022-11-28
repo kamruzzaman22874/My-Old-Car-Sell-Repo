@@ -1,18 +1,18 @@
 [
     {
-      "id": 1,
+      "category_id": 1,
       "name": "corolla",
       "description": "Here is the all products of this categories . You can see all products . For see all products click see all button.",
       "img": "https://i.ibb.co/RcV4Ng9/corolla2.jpg"
     },
     {
-      "id": 2,
+      "category_id": 2,
       "name": "tasla",
       "description": "Here is the all products of this categories . You can see all products . For see all products click see all button.",
       "img": "https://i.ibb.co/h824Lxv/corolla5.jpg"
     },
     {
-      "id": 3,
+      "category_id": 3,
       "name": "pajeroo",
       "description": "Here is the all products of this categories . You can see all products . For see all products click see all button.",
       "img": "https://i.ibb.co/0YmMHxn/corolla4.jpg"
