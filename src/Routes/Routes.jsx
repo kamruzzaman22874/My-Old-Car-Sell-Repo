@@ -1,5 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddProduct from "../components/AddProduct/AddProduct";
+import Corrolla from "../components/CarInfo/Corrolla";
+import Pajeroo from "../components/CarInfo/Pajeroo";
+import Tesla from "../components/CarInfo/Tesla";
 import CategoryCard from "../components/CategoryCard/CategoryCard";
 import AllByers from "../components/dashboard/AllByers";
 import AllSeller from "../components/dashboard/AllSeller/AllSeller";
@@ -44,7 +47,16 @@ const router = createBrowserRouter([
                 element: <AllByers></AllByers>
             },
             {
-
+                path: '/corolla',
+                element: <Corrolla></Corrolla>
+            },
+            {
+                path: '/tesla',
+                element: <Tesla></Tesla>
+            },
+            {
+                path: '/pajeroo',
+                element: <Pajeroo></Pajeroo>
             },
             {
                 path: '/category/:id',
