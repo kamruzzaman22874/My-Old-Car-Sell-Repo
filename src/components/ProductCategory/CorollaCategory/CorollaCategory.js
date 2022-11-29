@@ -2,12 +2,12 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Pajeroo = () => {
-    const { data: corollagroup } = useQuery({
-        queryKey: ['pajeroogroup'],
+const CorollaCategory = () => {
+    const { data: corollacategory } = useQuery({
+        queryKey: ['corollacategory'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/pajeroogroup');
+                const res = await fetch('http://localhost:5000/corollacategory');
                 const data = await res.json();
                 return data;
             } catch (err) {
@@ -15,11 +15,12 @@ const Pajeroo = () => {
             }
         },
     });
-
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-6'>
+        <div>
+            <h1 className='text-3xl font-bold'>Corolla Category</h1>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-6'>
 			{
-				corollagroup?.map(data => 
+				corollacategory?.map(data => 
 					
 				<div className="card w-96 bg-base-100 shadow-xl">
 				<figure><img src={data?.image} alt="Shoes" /></figure>
@@ -32,7 +33,8 @@ const Pajeroo = () => {
 					<p>Original Price: ${data.original}</p>
 					<p>Years of Use: {data.purchase}</p>
 					<div className="card-actions">
-                        <Link to='pajeroogroups' className='btn btn-info w-full text-white'>Show Details</Link>
+                        <Link to='/Corrolla' className='btn btn-info w-full text-white'>Show Details
+                        </Link>
 					</div>
 				</div>
 				</div>
@@ -40,7 +42,8 @@ const Pajeroo = () => {
 				)
 			}
 		</div>
+        </div>
     );
 };
 
-export default Pajeroo;
+export default CorollaCategory;

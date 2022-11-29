@@ -5,7 +5,6 @@ const CorollaCarInfo = () => {
     return (
         <div>
             <h2 className='text-4xl text-center font-bold italic py-6'>Corolla Car Info</h2>
-            <Corrolla></Corrolla>
         </div>
     );
 };

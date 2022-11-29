@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
-import Corrolla from '../CarInfo/Corrolla';
-import Category from '../Category/Category';
 import ProductCategory from '../ProductCategory/ProductCategory';
 import UniqueSection from '../UniqueSection/UniqueSection';
 

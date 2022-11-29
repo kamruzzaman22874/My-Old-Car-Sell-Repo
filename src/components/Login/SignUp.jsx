@@ -1,4 +1,3 @@
-import { error } from 'daisyui/src/colors';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
@@ -35,7 +34,7 @@ const SignUp = () => {
     }
 
     return (
-        <div className="hero min-h-screen">
+        <div className="hero">
   <div className="hero-content flex-col">
     <form onSubmit={handleCreateUser} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
       <div  className="card-body">
@@ -50,6 +49,16 @@ const SignUp = () => {
             <span className="label-text">Email</span>
           </label>
           <input type="email" name='email' placeholder="email" className="input input-bordered" />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Seller/Byer</span>
+          </label>
+          <select className="select select-bordered w-full max-w-xs">
+            <option disabled selected>Please Select</option>
+            <option>Seller</option>
+            <option>Byer</option>
+        </select>
         </div>
         <div className="form-control">
           <label className="label">
