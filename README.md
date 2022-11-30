@@ -1,13 +1,13 @@
-### Project Name: `PremiCar`
+### Project Name: `OLD CAR SELL`
 
 ### Live Link : https://assignment-twelve-b5667.web.app/
 
-### Client github : https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-MdHasan0467
-### Server github : https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-MdHasan0467
+### Client github : https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-kamruzzaman22874
+### Server github : https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-kamruzzaman22874
 
-### Admin : mdhasan@gmail.com 
+<!-- ### Admin : mdhasan@gmail.com  -->
 
-### Password : AA#123
+<!-- ### Password : AA#123 -->
 
 
 ### `Installations :`
@@ -17,32 +17,16 @@
 4. npm install react-icons --save
 5. npm install firebase
 6. npm install react-hook-form
-7. npm install react-icons --save
-8. npm install axios
-9. npm i @tanstack/react-query
-10. npm i react-checkmark (use by --force)
+7. npm i @tanstack/react-query
+8. npm i react-checkmark (use by --force)
 
 
-
-
-
-### I am using useQuery/ Tanstack Query a lots of time. like as -
-# components are--
-* Deshboard.js
-* TeslaGroup.js
-* MercedisGroup.js
-* and more...
-
-
-
-### I am using one time axios.js
-* MyOrders.js 
 
 
 
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was Tailwind with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -58,8 +42,6 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -81,32 +63,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
