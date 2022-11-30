@@ -1,11 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 // import Loading from '../../Loading/Loading';
 
 const AddProduct = () => {
+    const {user} = useContext(AuthContext)
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imageHostKey = process.env.REACT_APP_Imgbb_key;
     const navigate = useNavigate()
@@ -31,6 +34,7 @@ const AddProduct = () => {
                         location: data.location,
                         resale: data.resale,
                         original: data.original,
+                        email:user.email,
                         year: data.year,
                         purchase: data.purchase,
                         image: imgData.data.url

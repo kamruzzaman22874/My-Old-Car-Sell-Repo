@@ -8,9 +8,23 @@ export const AuthContext = createContext();
 const auth = getAuth(app)
 
 const AuthProvider = ({children}) => {
+    // const [logUser , setLogUser] = useState()
     const [loading , setLoading] = useState(true)
     const [user , setUser] = useState()
     const googleProvider = new GoogleAuthProvider()
+    console.log('userEmail', user?.email);
+
+
+	// useEffect(() => {
+	// 	fetch(`http://localhost:5000/users/${user?.email}`)
+	// 		.then((res) => res.json())
+	// 		.then((result) => {
+	// 			console.log(result[0]);
+	// 			setLogUser(result[0]);
+	// 		});
+	// }, [user?.email]);
+
+
 
     const userCreate =(email , password)=>{
         setLoading(true)

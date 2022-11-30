@@ -10,7 +10,7 @@ const Corolla = () => {
 	const [bookingData,setBookingData] = useState()
 	console.log('bookingData',bookingData);
 	const {user} = useContext(AuthContext)
-	console.log(user);
+	
 	const { data: corollagroup } = useQuery({
         queryKey: ['teslacategory'],
         queryFn: async () => {
@@ -36,7 +36,7 @@ const Corolla = () => {
 		const name = form.title.value;
 		const image = form.img.value;
 		console.log('location', location);
-console.log('img', data);
+console.log(number , meetingDate, email , location , resale , purchase , name , image);
 
 		const booking = {
 			name,
@@ -48,7 +48,7 @@ console.log('img', data);
 			meetingDate,
 			number
 		}
-		console.log('xyz',booking);
+		// console.log('xyz',booking);
 		fetch('http://localhost:5000/booking' ,{
 			method: 'POST',
 			headers: {
@@ -92,17 +92,19 @@ console.log('img', data);
 					<div className="modal-box relative">
 						<label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 						<form  onSubmit={handleModal} className='grid grid-cols-1 gap-3 mt-10'>
+                        <input name="name" type="text"
+                            defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered" />
+                        <input name="email" type="text"
+                            defaultValue={user?.email} disabled placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="img" type="text"
                             defaultValue={bookingData?.image} disabled placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="title" type="text"
                             defaultValue={bookingData?.name} disabled placeholder="Your Name" className="input w-full input-bordered" />
-                        <input name="email" type="email"
-                             placeholder="Email Address" defaultValue={user?.email} className="input w-full input-bordered" />
                         <input name="number" type="number"
                              placeholder="Mobile number" className="input w-full input-bordered" />
                         <input name="meetingDate" type="text"
                              placeholder="Meeting Date" className="input w-full input-bordered" />
-                        <input name="location" type="text" placeholder="Meeting Location" className="input w-full input-bordered"
+                        <input name="location" type="text" placeholder="Meeting Location"  className="input w-full input-bordered"
                             defaultValue={bookingData?.location} readOnly required />
                         <input name='resale' type="text" className="input w-full input-bordered "
                             defaultValue={bookingData?.resale} disabled />

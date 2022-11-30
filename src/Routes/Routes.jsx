@@ -7,6 +7,7 @@ import AllSeller from "../components/dashboard/AllSeller/AllSeller";
 import AllByers from "../components/dashboard/DashboardLayout/AllByers/AllByers";
 import DashboardLayout from "../components/dashboard/DashboardLayout/DashboardLayout";
 import MyOrders from "../components/dashboard/MyOrders/MyOrders";
+import MyProducts from "../components/dashboard/MyProducts/MyProducts";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import FAQ from "../components/FAQ/FAQ";
 import Home from "../components/Home/Home";
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/myorders',
                 element: <MyOrders></MyOrders>
+            },
+            {
+                path:'/dashboard/myproducts',
+                element: <MyProducts></MyProducts>
             },
             {
                 path:'/dashboard/allsellers',

@@ -10,7 +10,7 @@ const AllSeller = () => {
 
   return (
     <div>
-          {/* <AddProduct></AddProduct> */}
+          <AddProduct></AddProduct>
     </div>
   );
 };
