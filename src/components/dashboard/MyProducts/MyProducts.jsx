@@ -6,7 +6,7 @@ const MyProducts = () => {
     const { user, loading } = useContext(AuthContext);
 	//! fetch for getting products data from mongodb.....
 
-	const url = `http://localhost:5000/products?email=${user?.email}`;
+	const url = `https://old-car-sell-server.vercel.app/products?email=${user?.email}`;
 
 	const { data: products = [] } = useQuery({
 		queryKey: ['products', user?.email],
@@ -20,12 +20,14 @@ const MyProducts = () => {
 	// console.log(products);
 
 	const handleAdvertise = (id) => {
-		fetch(`http://localhost:5000/productById/${id}`)
+		// console.log('hhhh', id);
+		fetch(`https://old-car-sell-server.vercel.app/productById/${id}`)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
+				alert('got data')
 				if (data) {
-					fetch('http://localhost:5000/advertisement', {
+					fetch('https://old-car-sell-server.vercel.app/advertisement', {
 						method: 'POST',
 						headers: {
 							'content-type': 'application/json',
@@ -45,7 +47,7 @@ const MyProducts = () => {
 	}
     return (
         <div className='mx-12'>
-			<h1>My Products{products?.length}</h1>
+			<h1 className='lg:text-3xl text-center font-bold lg:mt-4'>My Products</h1>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
 				{products?.map((product) => (
 					<div key={product._id} className='card  bg-base-100 shadow-xl'>

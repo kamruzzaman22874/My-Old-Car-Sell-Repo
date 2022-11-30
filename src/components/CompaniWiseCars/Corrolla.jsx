@@ -15,7 +15,7 @@ const Corolla = () => {
         queryKey: ['teslacategory'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/corollagroup');
+                const res = await fetch('https://old-car-sell-server.vercel.app/corollagroup');
                 const data = await res.json();
                 return data;
             } catch (err) {
@@ -49,7 +49,7 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 			number
 		}
 		// console.log('xyz',booking);
-		fetch('http://localhost:5000/booking' ,{
+		fetch('https://old-car-sell-server.vercel.app/booking' ,{
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
@@ -93,9 +93,9 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 						<label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 						<form  onSubmit={handleModal} className='grid grid-cols-1 gap-3 mt-10'>
                         <input name="name" type="text"
-                            defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered" />
+                            defaultValue={user?.displayName} disabled placeholder="name" className="input w-full input-bordered" />
                         <input name="email" type="text"
-                            defaultValue={user?.email} disabled placeholder="Your Name" className="input w-full input-bordered" />
+                            defaultValue={user?.email} disabled placeholder="email" className="input w-full input-bordered" />
                         <input name="img" type="text"
                             defaultValue={bookingData?.image} disabled placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="title" type="text"

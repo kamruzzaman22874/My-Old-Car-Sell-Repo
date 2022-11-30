@@ -7,7 +7,7 @@ const TeslaCategory = () => {
         queryKey: ['teslacategory'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/teslacategory');
+                const res = await fetch('https://old-car-sell-server.vercel.app/teslacategory');
                 const data = await res.json();
                 return data;
             } catch (err) {

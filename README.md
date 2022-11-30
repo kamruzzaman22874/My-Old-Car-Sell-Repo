@@ -1,9 +1,15 @@
 ### Project Name: `OLD CAR SELL`
 
-### Live Link : https://assignment-twelve-b5667.web.app/
+### Live Link : https://old-car-390a9.web.app
 
 ### Client github : https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-kamruzzaman22874
 ### Server github : https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-kamruzzaman22874
+
+
+
+
+#Admin : joydb@gmail.com
+#Password : joy123456
 
 <!-- ### Admin : mdhasan@gmail.com  -->
 

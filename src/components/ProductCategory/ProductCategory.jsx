@@ -5,7 +5,7 @@ import TeslaCategory from './TeslaCategory/TeslaCategory';
 
 const ProductCategory = () => {
 	return (
-		<div className='w-full grid grid-cols-1 lg:grid-cols-3 lg:mx-24 mt-4'>
+		<div className='grid grid-cols-1 lg:grid-cols-3 mt-4'>
 			<CorollaCategory></CorollaCategory>
 			<PajarooCategory></PajarooCategory>
 			<TeslaCategory></TeslaCategory>

@@ -14,6 +14,7 @@ import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import SignUp from "../components/Login/SignUp";
 import Main from "../Layout/Main";
+import PrivateRoute from "./PrivateRoutes/PrivateRoutes";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/blog',
-                element:<PrivateRoutes><FAQ></FAQ></PrivateRoutes>
+                element:<FAQ></FAQ>
             },
             
             {
@@ -56,13 +57,13 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addproduct',
-                element:<AddProduct></AddProduct>
+                element: <PrivateRoutes><AddProduct></AddProduct></PrivateRoutes>
             },
         ]
     },
     {
         path: '/dashboard',
-        element : <DashboardLayout></DashboardLayout>,
+        element : <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children :[
             {
                 path:'/dashboard/myorders',

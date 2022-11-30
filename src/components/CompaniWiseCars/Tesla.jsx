@@ -14,7 +14,7 @@ const Tesla = () => {
         queryKey: ['teslacategory'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/teslagroup');
+                const res = await fetch('https://old-car-sell-server.vercel.app/teslagroup');
                 const data = await res.json();
                 return data;
             } catch (err) {
@@ -48,7 +48,7 @@ console.log('img', data);
 			number
 		}
 		console.log('xyz',booking);
-		fetch('http://localhost:5000/booking' ,{
+		fetch('https://old-car-sell-server.vercel.app/booking' ,{
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
@@ -91,6 +91,10 @@ console.log('img', data);
 					<div className="modal-box relative">
 						<label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 						<form  onSubmit={handleModal} className='grid grid-cols-1 gap-3 mt-10'>
+						<input name="name" type="text"
+                            defaultValue={user?.displayName} disabled placeholder="name" className="input w-full input-bordered" />
+                        <input name="email" type="text"
+                            defaultValue={user?.email} disabled placeholder="email" className="input w-full input-bordered" />
                         <input name="img" type="text"
                             defaultValue={bookingData?.image} disabled placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="title" type="text"

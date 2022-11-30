@@ -40,7 +40,7 @@ const AddProduct = () => {
                         image: imgData.data.url
                     }
                     console.log(addProduct);
-                    fetch('http://localhost:5000/allsellers',{
+                    fetch('https://old-car-sell-server.vercel.app/allsellers',{
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

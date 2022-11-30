@@ -7,7 +7,7 @@ const CorollaCategory = () => {
         queryKey: ['corollacategory'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/corollacategory');
+                const res = await fetch('https://old-car-sell-server.vercel.app/corollacategory');
                 const data = await res.json();
                 return data;
             } catch (err) {
@@ -16,7 +16,7 @@ const CorollaCategory = () => {
         },
     });
     return (
-        <div>
+        <div className='lg:ml-5'>
             <h1 className='text-3xl font-bold'>Corolla Category</h1>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-6'>
 			{
