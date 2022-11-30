@@ -36,7 +36,7 @@ const AddProduct = () => {
                         image: imgData.data.url
                     }
                     console.log(addProduct);
-                    fetch('http://localhost:5000/addedproducts',{
+                    fetch('http://localhost:5000/allsellers',{
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

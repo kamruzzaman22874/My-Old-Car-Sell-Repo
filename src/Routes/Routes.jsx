@@ -4,7 +4,9 @@ import Corrolla from "../components/CompaniWiseCars/Corrolla";
 import Pajeroo from "../components/CompaniWiseCars/Pajeroo";
 import Tesla from "../components/CompaniWiseCars/Tesla";
 import AllSeller from "../components/dashboard/AllSeller/AllSeller";
+import AllByers from "../components/dashboard/DashboardLayout/AllByers/AllByers";
 import DashboardLayout from "../components/dashboard/DashboardLayout/DashboardLayout";
+import MyOrders from "../components/dashboard/MyOrders/MyOrders";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import FAQ from "../components/FAQ/FAQ";
 import Home from "../components/Home/Home";
@@ -62,8 +64,16 @@ const router = createBrowserRouter([
         element : <DashboardLayout></DashboardLayout>,
         children :[
             {
-                path:'/dashboard',
+                path:'/dashboard/myorders',
+                element: <MyOrders></MyOrders>
+            },
+            {
+                path:'/dashboard/allsellers',
                 element: <AllSeller></AllSeller>
+            },
+            {
+                path:'/dashboard/allbyers',
+                element: <AllByers></AllByers>
             },
         ]
     },

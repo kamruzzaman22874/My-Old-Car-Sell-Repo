@@ -8,7 +8,7 @@ const Navbar = () => {
     const menuItems = <React.Fragment>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/blog'>Blog</Link></li>
-            <li><Link to='/addproduct'>Add Product</Link></li>
+            <li><Link to='/allsellers'>Add Product</Link></li>
             <li><Link to='/dashboard'>Dashboard</Link></li>
             <li><Link to='/login'>Login</Link></li>
             <li><Link onClick={()=>logOut()}>Logout</Link></li>

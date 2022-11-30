@@ -1,9 +1,11 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Navbar from '../../Navbar/Navbar';
-import Dashboard from '../Dashboard';
 
 const DashboardLayout = () => {
+
+    
+    
     return (
         <div>
             <Navbar></Navbar>
@@ -12,11 +14,12 @@ const DashboardLayout = () => {
             <div className="drawer-content">
                 <Outlet></Outlet>
             </div> 
-            <div className="drawer-side lg:px-8 lg:mt-2">
-                <label htmlFor="dashboard-drawer" className="drawer-overlay"></label> 
-                <ul className="menu  p-8 w-80 bg-base-100 text-base-content">
-                <li><a>All Seller</a></li>
-                <li><a>All Buyer</a></li>
+            <div className="drawer-side lg:px-8 lg:my-36">
+                <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
+                <ul className="menu p-8 w-80 rounded text-base-content">
+                <li><Link className='text-white font-bold text-xl bg-blue-400 hover:bg-blue-600 mt-2 text-center' to='/dashboard/myorders'><a>My Orders</a></Link></li>
+                <li><Link className='text-white font-bold text-xl bg-blue-400 hover:bg-blue-600 mt-2 text-center' to='/dashboard/allsellers'><a>All Seller</a></Link></li>
+                <li><Link className='text-white font-bold text-xl bg-blue-400 hover:bg-blue-600 mt-2 text-center' to='/dashboard/allbyers'><a>All Byers</a></Link></li>
                 </ul>
             
             </div>

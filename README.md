@@ -1,3 +1,45 @@
+### Project Name: `PremiCar`
+
+### Live Link : https://assignment-twelve-b5667.web.app/
+
+### Client github : https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-MdHasan0467
+### Server github : https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-MdHasan0467
+
+### Admin : mdhasan@gmail.com 
+
+### Password : AA#123
+
+
+### `Installations :`
+1. npm i react-router-dom
+2. npm i flowbite flowbite-react
+3. npm i daisyui
+4. npm install react-icons --save
+5. npm install firebase
+6. npm install react-hook-form
+7. npm install react-icons --save
+8. npm install axios
+9. npm i @tanstack/react-query
+10. npm i react-checkmark (use by --force)
+
+
+
+
+
+### I am using useQuery/ Tanstack Query a lots of time. like as -
+# components are--
+* Deshboard.js
+* TeslaGroup.js
+* MercedisGroup.js
+* and more...
+
+
+
+### I am using one time axios.js
+* MyOrders.js 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
