@@ -63,24 +63,32 @@ const router = createBrowserRouter([
         element : <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children :[
             {
+                path: '/dashboard/allseller',
+                element: <AllSeller></AllSeller>
+            },
+            {
+                path: '/dashboard/allbyer',
+                element: <AllByers></AllByers>
+            },
+            {
                 path:'/dashboard/myorders',
                 element: <MyOrders></MyOrders>
             },
             {
                 path:'/dashboard/addproducts',
-                element: <AddProduct></AddProduct>
+                element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
                 path:'/dashboard/myproducts',
-                element: <MyProducts></MyProducts>
+                element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>
             },
             {
                 path:'/dashboard/allsellers',
-                element: <AllSeller></AllSeller>
+                element: <PrivateRoute><AllSeller></AllSeller></PrivateRoute>
             },
             {
                 path:'/dashboard/allbyers',
-                element: <AllByers></AllByers>
+                element: <PrivateRoute><AllByers></AllByers></PrivateRoute>
             },
         ]
     },

@@ -1,12 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const MyProducts = () => {
     const { user, loading } = useContext(AuthContext);
 	//! fetch for getting products data from mongodb.....
 
-	const url = `https://old-car-sell-server.vercel.app/products?email=${user?.email}`;
+	const url = `http://localhost:5000/products?email=${user?.email}`;
 
 	const { data: products = [] } = useQuery({
 		queryKey: ['products', user?.email],
@@ -25,7 +26,7 @@ const MyProducts = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
-				alert('got data')
+				toast.success('Added advertisement')
 				if (data) {
 					fetch('https://old-car-sell-server.vercel.app/advertisement', {
 						method: 'POST',
@@ -64,7 +65,7 @@ const MyProducts = () => {
 								<span className='text-bold text-gray-800 text-xl'>
 									Category :
 								</span>
-								{product.category}
+								{product.name}
 							</p>
 							<p className='text-start'>
 								<span className='text-bold text-gray-800 text-xl'>
@@ -76,25 +77,25 @@ const MyProducts = () => {
 								<span className='text-bold text-gray-800 text-xl'>
 									Original Price :
 								</span>
-								{product.originalPrice}
+								{product.original}
 							</p>
 							<p className='text-start'>
 								<span className='text-bold text-gray-800 text-xl'>
 									Resale Price :
 								</span>
-								{product.resalePrice}
+								{product.resale}
 							</p>
 							<p className='text-start'>
 								<span className='text-bold text-gray-800 text-xl'>
 									Years of use :
 								</span>
-								{product.yearsOfUse}
+								{product.year}
 							</p>
 							<p className='text-start'>
 								<span className='text-bold text-gray-800 text-xl'>
 									Year of Purchase :
 								</span>
-								{product.yearOfPurchase}
+								{product.purchase}
 							</p>
 							<p className='text-start'>
 								<span className='text-bold text-gray-800 text-xl'>

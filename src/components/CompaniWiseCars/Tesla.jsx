@@ -3,13 +3,14 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Tesla = () => {
 	const [bookingData,setBookingData] = useState()
 	console.log('bookingData',bookingData);
 	const {user} = useContext(AuthContext)
+	const navigate = useNavigate()
 	const { data: teslagroup } = useQuery({
         queryKey: ['teslacategory'],
         queryFn: async () => {
@@ -60,6 +61,7 @@ console.log('img', data);
 		.then(data => {
 			if(data.acknowledged){
 				toast.success('Booking Success')
+				navigate('/dashboard/myorders')
 			}
 		})
 		.catch(err => console.log(err))
@@ -99,8 +101,6 @@ console.log('img', data);
                             defaultValue={bookingData?.image} disabled placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="title" type="text"
                             defaultValue={bookingData?.name} disabled placeholder="Your Name" className="input w-full input-bordered" />
-                        <input name="email" type="email"
-                             placeholder="Email Address" defaultValue={user?.email} className="input w-full input-bordered" />
                         <input name="number" type="number"
                              placeholder="Mobile number" className="input w-full input-bordered" />
                         <input name="meetingDate" type="text"

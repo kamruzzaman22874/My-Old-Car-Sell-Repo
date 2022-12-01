@@ -19,8 +19,11 @@ const Advertisement = () => {
 	});
 	console.log(categories);
     return (
-      <div className='lg:mt-10 lg:ml-6'>
+      <div>
+
+
         <h2 className='lg:text-2xl text-center font-bold italic'>Advertisement</h2>
+        <div className='grid grid-cols-1 lg:grid-cols-3 lg:mt-10 lg:ml-6'>
         {
             categories?.map(category =>   <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={category.image} alt="Shoes" /></figure>
@@ -39,6 +42,7 @@ const Advertisement = () => {
             </div>
           </div>)
         }
+        </div>
       </div>
     );
 };

@@ -12,6 +12,7 @@ const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const imageHostKey = process.env.REACT_APP_Imgbb_key;
     const navigate = useNavigate()
+    const time = String(new Date()).slice(0, 21);
     const handleAddProduct = data => {
         const image = data.image[0];
         const formData = new FormData()
@@ -37,10 +38,11 @@ const AddProduct = () => {
                         email:user.email,
                         year: data.year,
                         purchase: data.purchase,
-                        image: imgData.data.url
+                        image: imgData.data.url,
+                        time,
                     }
                     console.log(addProduct);
-                    fetch('http://localhost:5000/allsellers',{
+                    fetch('https://old-car-sell-server.vercel.app/allsellers',{
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -52,7 +54,7 @@ const AddProduct = () => {
                         .then(result => {
                             console.log(result);
                             toast.success(`${data.name} is added successfully`)
-                            navigate('/')
+                            navigate('/dashboard/myproducts')
                         })
                 }
             })
@@ -107,7 +109,7 @@ const AddProduct = () => {
             <div className='lg:flex'>
             <div className="form-control w-full max-w-xs">
                 <label className="label"><span className="label-text">Years of Use</span></label>  
-                        <input type="number" {...register("years", {
+                        <input type="number" {...register("year", {
                             required: true,
                             
                         })} className="input input-bordered w-full max-w-xs" />

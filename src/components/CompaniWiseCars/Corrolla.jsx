@@ -3,13 +3,14 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Corolla = () => {
 	const [bookingData,setBookingData] = useState()
 	console.log('bookingData',bookingData);
-	const {user} = useContext(AuthContext)
+	const {user} = useContext(AuthContext);
+	const navigate = useNavigate()
 	
 	const { data: corollagroup } = useQuery({
         queryKey: ['corollacategory'],
@@ -49,7 +50,7 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 			number
 		}
 		
-		// console.log('xyz',booking);
+		console.log('xyz',booking);
 		fetch('https://old-car-sell-server.vercel.app/booking' ,{
 			method: 'POST',
 			headers: {
@@ -62,6 +63,8 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 		.then(data => {
 			if(data.acknowledged){
 				toast.success('Booking Success')
+				navigate('/dashboard/myorders')
+
 			}
 		})
 		.catch(err => console.log(err))

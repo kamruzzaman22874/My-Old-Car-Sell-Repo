@@ -1,81 +1,89 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
-import { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 
 const MyOrders = () => {
-  const {user} = useContext(AuthContext);
+	const { user, loading } = useContext(AuthContext);
+	const [orders, setOrders] = useState();
 
-  const url = `https://old-car-sell-server.vercel.app/bookings?email=${user?.email}`
-  // console.log(url);
-
-  const {data : bookings , refetch , isLoading} = useQuery({
-    queryKey:['bookings' , user?.email],
-    queryFn : async ()=>{
-      const res = await fetch(url);
-      const data = await res.json();
-      console.log(data);
-    }
-  })
-  const handleCancel =(id)=>{
-      fetch(`https://old-car-sell-server.vercel.app/bookings/${id}` ,{
-        method: 'DELETE',
-      })
-      .then(res => res.json())
-      .then(data=> {
-        console.log(data);
-        if(data.acknowledged){
-          toast.success('Delete Successfully')
-          refetch()
-        }
-      })
-
-  }
+	useEffect(() => {
+		axios.get(`http://localhost:5000/myorders?email=${user?.email}`)
+			.then((data) => setOrders(data.data));
+	}, [user?.email]);
+	console.log(orders);
  
     return (
-    <div>
-        <h2 className='text-center text-4xl font-bold italic text-blue-500 lg:mt-6'>My Orders</h2>
-     <div className='grid grid-cols-1 grid-cols-3 gap-6 lg:mt-6 lg:mb-6'>
-       { bookings?.length > 0 ?
-        bookings.map(book=> <div className="card w-96 bg-base-100 shadow-xl">
-        <figure><img src={book.image} /></figure>
-        <div className="card-body">
-          <div className='flex justify-between'>
-          <h2 className="card-title">
-           {book.name}
-          </h2>
-            <div className="badge badge-secondary">{book.location}</div>
-          </div>
-         
-          <p>Purchase : {book.purchase}</p>
-          <p>Resale : {book.resale}</p>
-          <p>Booking Date : {book.meetingDate}</p>
-          <p>Number : {book.number}</p>
-          <div className="card-actions justify-around">
-            <button className='btn btn-info text-white'>Confirm</button> 
-            <button onClick={()=> handleCancel(book._id)} className='btn btn-info text-white'>Cancel</button> 
-            
-          </div>
-        </div>
-      </div>)
-      :
-      <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src="" alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">
-      
-      <div className="badge badge-secondary"></div>
-    </h2>
-    <p>There are no order vailable</p>
-    <div className="card-actions justify-end">
-    </div>
-  </div>
-</div>
-  }
-</div>
-</div> 
+      <div className='mx-12 bg-transparent'>
+			<h1 className='my-5'>My Total orders : {orders?.length}</h1>
+
+			{orders?.map((order) => (
+				<div key={order?._id} className='card  bg-base-100 shadow-xl'>
+					<div className='card lg:card-side my-5 bg-base-100 shadow-xl'>
+						<img src={order?.image} className='lg:w-[50%]' alt='Album' />
+
+						<div className='card-body'>
+							<div className='card-body '>
+								<h2 className='card-title'>
+									<span className='text-bold text-gray-800 lg:text-lg'>
+										Brand :
+									</span>
+									{order?.name}
+								</h2>
+								<p className='text-start'>
+									<span className='text-bold text-gray-800 lg:text-lg'>
+										Model :
+									</span>
+									{order?.location}
+								</p>
+								<p className='text-start'>
+									<span className='text-bold text-gray-800 lg:text-lg'>
+										Resell Price :
+									</span>
+									{order?.resale}
+								</p>
+								<p className='text-start'>
+									<span className='text-bold text-gray-800 lg:text-lg'>
+										Seller Name :
+									</span>
+									{order?.email}
+								</p>
+								<p className='text-start'>
+									<span className='text-bold text-gray-800 lg:text-lg'>
+										Seller Email :
+									</span>
+									{order?.meetingDate}
+								</p>
+								<p className='text-start'>
+									<span className='text-bold text-gray-800 lg:text-lg'>
+										Seller Location :
+									</span>
+									{order?.number}
+								</p>
+								<p className='text-start'>
+									<span className='text-bold text-gray-800 lg:text-lg'>
+										Meeting Date :
+									</span>
+									{order?.meetingDate}
+								</p>
+								<p className='text-start'>
+									<span className='text-bold text-gray-800 lg:text-lg'>
+										Buyer Number :
+									</span>
+									{order?.buyerNumber}
+								</p>
+								<div className='card-actions justify-end'>
+									<button className='btn border-0 bg-green-500 hover:bg-green-600 text-white'>
+										Buy Now
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			))}
+		</div> 
     
     );
 };
