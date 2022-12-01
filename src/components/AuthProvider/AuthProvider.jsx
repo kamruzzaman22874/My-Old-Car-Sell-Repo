@@ -16,13 +16,14 @@ const AuthProvider = ({children}) => {
 
 
 	useEffect(() => {
-		fetch(`https://old-car-sell-server.vercel.app/users/${user?.email}`)
+		fetch(`http://localhost:5000/users/joydb@gmail.com`)
 			.then((res) => res.json())
 			.then((result) => {
-				console.log(result[0]);
-				setLogUser(result[0]);
+				// console.log(result[0]);
+				setLogUser(result);
 			});
 	}, [user?.email]);
+    console.log(logUser );
 
 
 

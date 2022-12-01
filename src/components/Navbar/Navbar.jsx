@@ -1,17 +1,33 @@
 import React, { useContext }  from 'react';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Navbar = () => {
     const {logOut , user} = useContext(AuthContext);
+    const navigate = useNavigate()
+
+    const handleLogout=() => {
+        navigate('/login')
+        logOut()
+        .then(() => {
+            toast.error('Log Out')
+            navigate('/login')
+        }).catch(err => console.error(err))
+    }
     // console.log(user);
     const menuItems = <React.Fragment>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/blog'>Blog</Link></li>
-            <li><Link to='/dashboard/allsellers'>Add Product</Link></li>
             <li><Link to='/dashboard'>Dashboard</Link></li>
-            <li><Link to='/login'>Login</Link></li>
-            <li><Link onClick={logOut}>Logout</Link></li>
+            {
+                user?
+                <li><Link onClick={handleLogout}>Logout</Link></li>
+                 :  
+                 <li><Link to='/login'>Login</Link></li>
+            }
+           
+            
 
             {/* <li><Link to='/dashboard'>Dashboard</Link></li> */}
             {/* <li><button onClick={handleLogout} >Sign Out</button></li> */}

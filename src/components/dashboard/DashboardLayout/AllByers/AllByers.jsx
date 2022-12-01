@@ -3,7 +3,9 @@ import React from 'react';
 const AllByers = () => {
     return (
   <div className="overflow-x-auto w-full lg:mt-6">
-    <h2 className='text-center text-4xl font-bold italic text-blue-500 lg:mt-4 lg:mb-4'>My Orders</h2>
+    <h2 className='text-center text-4xl font-bold italic text-blue-500 lg:mt-4 lg:mb-4'>
+      All Byers
+    </h2>
   <table className="table w-full">
     <thead>
       <tr>

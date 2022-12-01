@@ -10,7 +10,7 @@ const AllSeller = () => {
 
   return (
     <div>
-          <AddProduct></AddProduct>
+          <h1>This is seller</h1>
     </div>
   );
 };

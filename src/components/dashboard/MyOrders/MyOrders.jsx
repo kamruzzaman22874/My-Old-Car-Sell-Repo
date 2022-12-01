@@ -9,14 +9,14 @@ const MyOrders = () => {
   const {user} = useContext(AuthContext);
 
   const url = `https://old-car-sell-server.vercel.app/bookings?email=${user?.email}`
-  console.log(url);
+  // console.log(url);
 
   const {data : bookings , refetch , isLoading} = useQuery({
     queryKey:['bookings' , user?.email],
     queryFn : async ()=>{
       const res = await fetch(url);
       const data = await res.json();
-      return data;
+      console.log(data);
     }
   })
   const handleCancel =(id)=>{

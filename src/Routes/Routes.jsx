@@ -55,10 +55,7 @@ const router = createBrowserRouter([
                 path: '/pajeroo',
                 element: <Pajeroo></Pajeroo>
             },
-            {
-                path:'/addproduct',
-                element: <PrivateRoutes><AddProduct></AddProduct></PrivateRoutes>
-            },
+           
         ]
     },
     {
@@ -68,6 +65,10 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/myorders',
                 element: <MyOrders></MyOrders>
+            },
+            {
+                path:'/dashboard/addproducts',
+                element: <AddProduct></AddProduct>
             },
             {
                 path:'/dashboard/myproducts',

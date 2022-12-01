@@ -3,15 +3,14 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Pajeroo = () => {
-	const [bookingData,setBookingData] = useState()
+	const [bookingData,setBookingData] = useState(null)
 	console.log('bookingData',bookingData);
 	const {user} = useContext(AuthContext)
 	const { data: pajeroogroup } = useQuery({
-        queryKey: ['teslacategory'],
+        queryKey: ['pajeroocategory'],
         queryFn: async () => {
             try {
                 const res = await fetch('https://old-car-sell-server.vercel.app/pajeroogroup');
@@ -47,7 +46,6 @@ console.log('img', data);
 			meetingDate,
 			number
 		}
-		console.log('xyz',booking);
 		fetch('https://old-car-sell-server.vercel.app/booking' ,{
 			method: 'POST',
 			headers: {
@@ -60,6 +58,7 @@ console.log('img', data);
 		.then(data => {
 			if(data.acknowledged){
 				toast.success('Booking Success')
+				setBookingData(null)
 			}
 		})
 		.catch(err => console.log(err))

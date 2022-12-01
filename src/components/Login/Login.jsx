@@ -19,18 +19,16 @@ const navigate = useNavigate()
 const handleLogin =  event =>{
 	event.preventDefault()
 	const form = event.target
-	console.log(form);
 	const email = form.email.value;
 	const password = form.password.value
 	console.log( email , password);
 
 	userLogin(email , password)
 	.then(result =>{
-		navigateNow()
-		const user = result.user;
+    const user = result.user;
 		console.log(user);
+		navigateNow()
 		toast.success('user login successfully')
-		form.reset()
 	})
 	.catch(error => console.error(error))
 }
@@ -38,9 +36,9 @@ const handleLogin =  event =>{
  const handleGoogleSignIn =()=>{
         googleSignIn()
         .then(result=>{
-			navigateNow()
             const user = result.user;
             console.log(user);
+            navigateNow()
             toast.success('Login Successfull')
 			
         })

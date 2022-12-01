@@ -12,7 +12,7 @@ const Corolla = () => {
 	const {user} = useContext(AuthContext)
 	
 	const { data: corollagroup } = useQuery({
-        queryKey: ['teslacategory'],
+        queryKey: ['corollacategory'],
         queryFn: async () => {
             try {
                 const res = await fetch('https://old-car-sell-server.vercel.app/corollagroup');
@@ -48,6 +48,7 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 			meetingDate,
 			number
 		}
+		
 		// console.log('xyz',booking);
 		fetch('https://old-car-sell-server.vercel.app/booking' ,{
 			method: 'POST',

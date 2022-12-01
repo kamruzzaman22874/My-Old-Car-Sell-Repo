@@ -20,7 +20,7 @@ const PajarooCategory = () => {
             <h1 className='text-3xl font-bold'>Pajeroo Category</h1>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-6'>
 			{
-				pajeroocategory?.map(data => 
+				pajeroocategory?.map((data , idx) => 
 					
 				<div className="card w-96 bg-base-100 shadow-xl">
 				<figure><img src={data?.image} alt="Shoes" /></figure>
