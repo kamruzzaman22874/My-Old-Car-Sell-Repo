@@ -42,7 +42,7 @@ const AddProduct = () => {
                         time,
                     }
                     console.log(addProduct);
-                    fetch('http://localhost:5000/addproducts',{
+                    fetch('https://old-car-sell-server.vercel.app/addproducts',{
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

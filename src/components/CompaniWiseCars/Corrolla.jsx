@@ -17,7 +17,7 @@ const Corolla = () => {
         queryKey: ['corollagroup'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/corollagroup');
+                const res = await fetch('https://old-car-sell-server.vercel.app/corollagroup');
                 const data = await res.json();
                 return data;
             } catch (err) {

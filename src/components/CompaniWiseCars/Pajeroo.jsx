@@ -15,7 +15,7 @@ const Pajeroo = () => {
         queryKey: ['pajeroogroup'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/pajeroogroup');
+                const res = await fetch('https://old-car-sell-server.vercel.app/pajeroogroup');
                 const data = await res.json();
                 return data;
             } catch (err) {

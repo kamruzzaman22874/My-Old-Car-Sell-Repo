@@ -14,7 +14,7 @@ const AllSeller = () => {
 	// console.log(logUser?.role);
 	//! fetch for getting products data from mongodb.....
 
-	const url = 'http://localhost:5000/usersrole';
+	const url = 'https://old-car-sell-server.vercel.app/usersrole';
 
 	const { data: usersrole = [], refetch } = useQuery({
 		queryKey: ['usersrole'],
@@ -35,7 +35,7 @@ const AllSeller = () => {
 	//! Delete button of modal...
 	const handleDeleteUser = (seller) => {
 		console.log('seller', seller?._id);
-		fetch(`http://localhost:5000/seller/${seller?._id}`, {
+		fetch(`https://old-car-sell-server.vercel.app/seller/${seller?._id}`, {
 			method: 'DELETE',
 		})
 			.then((res) => res.json())
@@ -49,7 +49,7 @@ const AllSeller = () => {
 	};
 
 	const handleMakeVerify = (id) => {
-		fetch(`http://localhost:5000/users/verify/${id}`, {
+		fetch(`https://old-car-sell-server.vercel.app/users/verify/${id}`, {
 			method: 'PUT',
 		})
 			.then((res) => res.json())
