@@ -9,7 +9,7 @@ const MyOrders = () => {
 	const [orders, setOrders] = useState();
 
 	useEffect(() => {
-		axios.get(`http://localhost:5000/myorders?email=${user?.email}`)
+		axios.get(`https://old-car-sell-server.vercel.app/myorders?email=${user?.email}`)
 			.then((data) => setOrders(data.data));
 	}, [user?.email]);
 	console.log(orders);
@@ -33,7 +33,7 @@ const MyOrders = () => {
 								</h2>
 								<p className='text-start'>
 									<span className='text-bold text-gray-800 lg:text-lg'>
-										Model :
+										Location :
 									</span>
 									{order?.location}
 								</p>
@@ -47,13 +47,13 @@ const MyOrders = () => {
 									<span className='text-bold text-gray-800 lg:text-lg'>
 										Seller Name :
 									</span>
-									{order?.email}
+									{order?.name}
 								</p>
 								<p className='text-start'>
 									<span className='text-bold text-gray-800 lg:text-lg'>
 										Seller Email :
 									</span>
-									{order?.meetingDate}
+									{order?.email}
 								</p>
 								<p className='text-start'>
 									<span className='text-bold text-gray-800 lg:text-lg'>
@@ -73,7 +73,7 @@ const MyOrders = () => {
 									</span>
 									{order?.buyerNumber}
 								</p>
-								<div className='card-actions justify-end'>
+								<div className='card-actions lg:justify-end'>
 									<button className='btn border-0 bg-green-500 hover:bg-green-600 text-white'>
 										Buy Now
 									</button>

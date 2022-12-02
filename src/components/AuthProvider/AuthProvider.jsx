@@ -16,7 +16,7 @@ const AuthProvider = ({children}) => {
 
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/users/joydb@gmail.com`)
+		fetch(`https://old-car-sell-server.vercel.app/users/joydb@gmail.com`)
 			.then((res) => res.json())
 			.then((result) => {
 				// console.log(result[0]);

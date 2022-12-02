@@ -50,7 +50,7 @@ console.log('img', data);
 		}
 		console.log(booking);
 
-		fetch('http://localhost:5000/booking' ,{
+		fetch('https://old-car-sell-server.vercel.app/booking' ,{
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'

@@ -7,7 +7,7 @@ const MyProducts = () => {
     const { user, loading } = useContext(AuthContext);
 	//! fetch for getting products data from mongodb.....
 
-	const url = `http://localhost:5000/products?email=${user?.email}`;
+	const url = `https://old-car-sell-server.vercel.app/products?email=${user?.email}`;
 
 	const { data: products = [] } = useQuery({
 		queryKey: ['products', user?.email],
