@@ -9,14 +9,15 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 const Corolla = () => {
 	const [bookingData,setBookingData] = useState()
 	console.log('bookingData',bookingData);
-	const {user} = useContext(AuthContext);
+	const {user ,loading} = useContext(AuthContext);
+	
 	const navigate = useNavigate()
 	
 	const { data: corollagroup } = useQuery({
-        queryKey: ['corollacategory'],
+        queryKey: ['corollagroup'],
         queryFn: async () => {
             try {
-                const res = await fetch('https://old-car-sell-server.vercel.app/corollagroup');
+                const res = await fetch('http://localhost:5000/corollagroup');
                 const data = await res.json();
                 return data;
             } catch (err) {
@@ -24,6 +25,8 @@ const Corolla = () => {
             }
         },
     });
+
+	console.log(corollagroup);
 
 	const handleModal = (event,data) => {
 		event.preventDefault();
@@ -47,7 +50,7 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 			image,
 			email, 
 			meetingDate,
-			number
+			number,
 		}
 		
 		fetch('https://old-car-sell-server.vercel.app/booking' ,{
@@ -69,6 +72,9 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 		.catch(err => console.log(err))
 
 	}
+	if(loading){
+		return
+	}
 
 	return (
 		<div className='grid grid-cols-1 lg:grid-cols-3 gap-6 my-6 lg:mx-36'>
@@ -82,9 +88,12 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 				Brand : {data.name}
 				<div className="badge badge-secondary">{data.location}</div>
 				</h2>
+				{
+					data?.time && <p>Posted Time: <span className='text-blue-600'>{data.time}</span> </p>
+				}
 				<p>Resale Price: ${data.resale}</p>
 					<p>Original Price: ${data.original}</p>
-					<p>Years of Use: {data.year}</p>
+					<p>Years of Use: {data.purchase}</p>
 					
 					
 					<label htmlFor="my-modal-3" onClick={()=>setBookingData(data)} className="btn btn-info w-full text-white">Booking Now</label>

@@ -12,18 +12,18 @@ const AuthProvider = ({children}) => {
     const [loading , setLoading] = useState(true)
     const [user , setUser] = useState()
     const googleProvider = new GoogleAuthProvider()
-    console.log('userEmail', user?.email);
-
+    
 
 	useEffect(() => {
-		fetch(`https://old-car-sell-server.vercel.app/users/joydb@gmail.com`)
+		fetch(`http://localhost:5000/users/${user?.email}`)
 			.then((res) => res.json())
 			.then((result) => {
-				// console.log(result[0]);
+				if(result === []){
+                    console.log(result);
 				setLogUser(result);
+                }
 			});
 	}, [user?.email]);
-    console.log(logUser );
 
 
 

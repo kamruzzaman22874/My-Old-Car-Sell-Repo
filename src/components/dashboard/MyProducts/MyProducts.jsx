@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Loader from '../../Loader/Loader';
 
 const MyProducts = () => {
     const { user, loading } = useContext(AuthContext);
@@ -44,7 +45,7 @@ const MyProducts = () => {
 	};
 
 	if (loading) {
-		
+		<Loader></Loader>
 	}
     return (
         <div className='mx-12'>

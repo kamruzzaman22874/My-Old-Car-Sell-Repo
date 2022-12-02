@@ -12,10 +12,10 @@ const Pajeroo = () => {
 	const {user} = useContext(AuthContext)
 	const navigate = useNavigate()
 	const { data: pajeroogroup } = useQuery({
-        queryKey: ['pajeroocategory'],
+        queryKey: ['pajeroogroup'],
         queryFn: async () => {
             try {
-                const res = await fetch('https://old-car-sell-server.vercel.app/pajeroogroup');
+                const res = await fetch('http://localhost:5000/pajeroogroup');
                 const data = await res.json();
                 return data;
             } catch (err) {
@@ -23,6 +23,7 @@ const Pajeroo = () => {
             }
         },
     });
+	console.log(pajeroogroup);
 
 	const handleModal = (event,data) => {
 		event.preventDefault();
@@ -46,7 +47,7 @@ console.log('img', data);
 			image,
 			email, 
 			meetingDate,
-			number
+			number,
 		}
 		console.log(booking);
 

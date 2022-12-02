@@ -71,7 +71,7 @@ const MyOrders = () => {
 									<span className='text-bold text-gray-800 lg:text-lg'>
 										Buyer Number :
 									</span>
-									{order?.buyerNumber}
+									{order?.number}
 								</p>
 								<div className='card-actions lg:justify-end'>
 									<button className='btn border-0 bg-green-500 hover:bg-green-600 text-white'>

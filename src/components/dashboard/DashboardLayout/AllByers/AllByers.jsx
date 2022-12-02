@@ -13,7 +13,7 @@ const AllByers = () => {
 
 	//! fetch for getting products data from mongodb.....
 
-	const url = 'https://old-car-sell-server.vercel.app/usersroleBuyers';
+	const url = 'http://localhost:5000/usersroleBuyers';
 
 	const { data: usersroleBuyers = [], refetch } = useQuery({
 		queryKey: ['usersroleBuyers'],
@@ -23,6 +23,7 @@ const AllByers = () => {
 			return data;
 		},
 	});
+    console.log(usersroleBuyers);
 
 	//! Cancel Button of modal...
 	const closeModal = () => {
@@ -32,7 +33,7 @@ const AllByers = () => {
 	//! Delete button of modal...
 	const handleDeleteUser = (buyer) => {
 		console.log('buyer', buyer?._id);
-		fetch(`https://old-car-sell-server.vercel.app/Buyer/${buyer?._id}`, {
+		fetch(`http://localhost:5000/Buyer/${buyer?._id}`, {
 			method: 'DELETE',
 			headers: {
 				authorization: `${localStorage.getItem('userAccessToken')}`,
@@ -42,7 +43,7 @@ const AllByers = () => {
 			.then((data) => {
 				console.log(data);
 				if (data.deletedCount > 0) {
-					toast.success(`Dr. ${buyer.name} delete successfully!!`);
+					toast.success(`${buyer.name} delete successfully!!`);
 				}
 				refetch();
 			});
@@ -55,7 +56,7 @@ const AllByers = () => {
 	// console.log(usersroleBuyers);
     return (
         <div>
-        <h1>All Buyers here</h1>
+        <h1 className='text-2xl text-center font-bold'>All Buyers here</h1>
         <div className='lg:overflow-x-auto lg:w-full w-[100vw]'>
             <table className='table w-full'>
                 <thead>

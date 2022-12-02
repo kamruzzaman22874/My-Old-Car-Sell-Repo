@@ -14,7 +14,7 @@ const AllSeller = () => {
 	// console.log(logUser?.role);
 	//! fetch for getting products data from mongodb.....
 
-	const url = 'https://old-car-sell-server.vercel.app/usersrole';
+	const url = 'http://localhost:5000/usersrole';
 
 	const { data: usersrole = [], refetch } = useQuery({
 		queryKey: ['usersrole'],
@@ -35,11 +35,8 @@ const AllSeller = () => {
 	//! Delete button of modal...
 	const handleDeleteUser = (seller) => {
 		console.log('seller', seller?._id);
-		fetch(`https://old-car-sell-server.vercel.app/seller/${seller?._id}`, {
+		fetch(`http://localhost:5000/seller/${seller?._id}`, {
 			method: 'DELETE',
-			headers: {
-				authorization: `${localStorage.getItem('userAccessToken')}`,
-			},
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -52,7 +49,7 @@ const AllSeller = () => {
 	};
 
 	const handleMakeVerify = (id) => {
-		fetch(`https://old-car-sell-server.vercel.app/users/verify/${id}`, {
+		fetch(`http://localhost:5000/users/verify/${id}`, {
 			method: 'PUT',
 		})
 			.then((res) => res.json())
@@ -73,7 +70,7 @@ const AllSeller = () => {
   return (
     <div>
     {!usersrole && <h1>No Seller logged</h1>}
-    <h1>All sellers here</h1>
+    <h1 className='text-2xl text-center font-bold italic lg:p-4'>All sellers here</h1>
 
     <div className='lg:overflow-x-auto'>
         <table className='table w-full'>
@@ -121,7 +118,6 @@ const AllSeller = () => {
                                 <td>
                                     <label
                                         onClick={() => handleMakeVerify(seller?._id)}
-                                        htmlFor='confirmation-modal'
                                         className='btn btn-sm text-white border-0 bg-blue-500 hover:bg-blue-700'
                                     >
                                         Verify
