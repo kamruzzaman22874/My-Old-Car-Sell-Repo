@@ -53,7 +53,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex'>
                     <img className='w-[50px]' src='car-logo.png' alt="logo" />
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">OLD CAR SELL</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">CAR HOUSE</Link>
                 </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">

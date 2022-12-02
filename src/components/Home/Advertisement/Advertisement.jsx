@@ -22,8 +22,8 @@ const Advertisement = () => {
       <div>
 
 
-        <h2 className='lg:text-2xl text-center font-bold italic'>Advertisement</h2>
-        <div className='grid grid-cols-1 lg:grid-cols-3 lg:mt-10 lg:ml-6'>
+        <h2 className='lg:text-3xl lg:py-10 font-bold italic text-center'>ADVERTISEMENT</h2>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 lg:mt-6 lg:ml-32'>
         {
             categories?.map(category =>   <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={category.image} alt="Shoes" /></figure>
@@ -33,7 +33,7 @@ const Advertisement = () => {
               <p>Location : {category.location}</p>
               <p>Resale : {category.resale}</p>
               <p>Previous Price :{category.original}</p>
-              <p>Year Of Buy: {category.purchase}</p>
+              <p>Purchase: {category.purchase}</p>
              
               
               <div className="card-actions justify-end">

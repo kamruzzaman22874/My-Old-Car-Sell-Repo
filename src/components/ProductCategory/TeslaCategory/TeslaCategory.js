@@ -17,7 +17,7 @@ const TeslaCategory = () => {
     });
     return (
         <div>
-            <h className='text-3xl font-bold'>Tesla Category</h>
+            <h className='lg:text-2xl lg:px-20 font-bold'>Tesla Category</h>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-6'>
 			{
 				teslacategory?.map(data => 
@@ -31,7 +31,7 @@ const TeslaCategory = () => {
 					</h2>
 					<p>Resale Price: ${data.resale}</p>
 					<p>Original Price: ${data.original}</p>
-					<p>Years of Use: {data.purchase}</p>
+					<p>Purchase: {data.purchase}</p>
 					<div className="card-actions">
                         <Link to='/tesla' className='btn btn-info w-full text-white'>Show Details</Link>
 					</div>

@@ -1,81 +1,125 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import Loader from '../../../Loader/Loader';
+import DeleteModal from '../../DeleteModal/DeleteModal';
 
 const AllByers = () => {
-  const {user} = useContext(AuthContext)
+    const { loading } = useContext(AuthContext);
+	const [deletingUser, setDeletingUser] = useState(null);
+	console.log('deletingUser', deletingUser);
 
-  const { data: allbuyers = [], isLoading, refetch } = useQuery({
-    queryKey: ['allbuyers'],
-    queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/seller`)
-        const data = await res.json();
-        return data
-    }
-});
+	//! fetch for getting products data from mongodb.....
 
+	const url = 'http://localhost:5000/usersroleBuyers';
 
-if (isLoading) {
-    return <Loader></Loader>
-};
+	const { data: usersroleBuyers = [], refetch } = useQuery({
+		queryKey: ['usersroleBuyers'],
+		queryFn: async () => {
+			const res = await fetch(url);
+			const data = await res.json();
+			return data;
+		},
+	});
 
-const handleDeleteBuyer = (id) => {
-    fetch(`http://localhost:5000/${id}`, {
-        method: 'DELETE'
-    })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data, ' deleted');
-            if (data.deletedCount === 1) {
-                toast.success('successfully deleted ');
-                refetch();
-            }
-        })
-};
+	//! Cancel Button of modal...
+	const closeModal = () => {
+		setDeletingUser(null);
+	};
+
+	//! Delete button of modal...
+	const handleDeleteUser = (buyer) => {
+		console.log('buyer', buyer?._id);
+		fetch(`http://localhost:5000/Buyer/${buyer?._id}`, {
+			method: 'DELETE',
+			headers: {
+				authorization: `${localStorage.getItem('userAccessToken')}`,
+			},
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				if (data.deletedCount > 0) {
+					toast.success(`Dr. ${buyer.name} delete successfully!!`);
+				}
+				refetch();
+			});
+	};
+
+	if (loading) {
+		return <Loader></Loader>;
+	}
+
+	// console.log(usersroleBuyers);
     return (
-      <div>
-      <h1 className='text-center my-5 font-bold text-2xl'>
-          Here is All Byers.
-      </h1>
-      <div className="overflow-x-auto">
-          <table className="table w-full">
-              <thead>
-                  <tr>
-                      <th></th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Make Admin</th>
-                      <th>Delete</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {allbuyers?.map((allbuyer, i) =>
-                      <tr key={allbuyer._id}>
-                          <th>{i + 1}</th>
-                          <td>{allbuyer?.name}</td>
-                          <td>{allbuyer?.email}</td>
-                          <td>
-                              <button className='btn btn-sm btn-primary'>
-                                  Make Admin
-                              </button>
-                          </td>
-                          <td>
-                              <button
-                                  onClick={() => handleDeleteBuyer(allbuyer._id)}
-                                  className='btn btn-sm btn-primary'>
-                                  Delete
-                              </button>
-                          </td>
-                      </tr>
-                  )}
+        <div>
+        <h1>All Buyers here</h1>
+        <div className='lg:overflow-x-auto lg:w-full w-[100vw]'>
+            <table className='table w-full'>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Role</th>
+                        <th>Verify</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {usersroleBuyers &&
+                        usersroleBuyers?.map((buyer) => (
+                            <tr>
+                                <td>
+                                    <div className='flex items-center space-x-3'>
+                                        <div className='avatar'>
+                                            <div className='mask mask-squircle w-12 h-12'>
+                                                <img
+                                                    src={buyer?.photoURL}
+                                                    alt='Avatar Tailwind CSS Component'
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className='font-bold'>{buyer?.name}</div>
+                                            <div className='text-sm opacity-50'>{buyer?.email}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {buyer.role}
+                                    <br />
+                                    <span className='badge badge-ghost badge-sm'>
+                                        **********
+                                    </span>
+                                </td>
 
-              </tbody>
-          </table>
-      </div>
-  </div>
+                                <th>
+                                    <label
+                                        onClick={() => setDeletingUser(buyer)}
+                                        htmlFor='confirmation-modal'
+                                        className='btn btn-sm text-white border-0 bg-red-500 hover:bg-red-700'
+                                    >
+                                        Delete
+                                    </label>
+                                </th>
+                            </tr>
+                        ))}
+                </tbody>
+            </table>
+        </div>
+
+        {deletingUser && (
+            <DeleteModal
+                deletingUser={deletingUser}
+                image={deletingUser?.photoURL}
+                name={deletingUser?.name}
+                email={deletingUser?.email}
+                closeModal={closeModal}
+                successAction={handleDeleteUser}
+            ></DeleteModal>
+        )}
+    </div>
     );
 };
 

@@ -50,7 +50,6 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 			number
 		}
 		
-		console.log('xyz',booking);
 		fetch('https://old-car-sell-server.vercel.app/booking' ,{
 			method: 'POST',
 			headers: {
@@ -85,7 +84,7 @@ console.log(number , meetingDate, email , location , resale , purchase , name , 
 				</h2>
 				<p>Resale Price: ${data.resale}</p>
 					<p>Original Price: ${data.original}</p>
-					<p>Years of Use: {data.purchase}</p>
+					<p>Years of Use: {data.year}</p>
 					
 					
 					<label htmlFor="my-modal-3" onClick={()=>setBookingData(data)} className="btn btn-info w-full text-white">Booking Now</label>

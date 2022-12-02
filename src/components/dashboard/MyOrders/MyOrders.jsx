@@ -16,7 +16,7 @@ const MyOrders = () => {
  
     return (
       <div className='mx-12 bg-transparent'>
-			<h1 className='my-5'>My Total orders : {orders?.length}</h1>
+			<h1 className='lg:my-5 text-2xl text-center font-bold italic'>MY ORDERS</h1>
 
 			{orders?.map((order) => (
 				<div key={order?._id} className='card  bg-base-100 shadow-xl'>

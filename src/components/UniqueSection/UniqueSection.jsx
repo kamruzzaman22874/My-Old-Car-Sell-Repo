@@ -10,7 +10,7 @@ const UniqueSection = () => {
 								<img
 									alt='content'
 									className ='object-cover object-center h-full w-full'
-									src='https://i.ibb.co/cQrMgdP/corolla3.jpg'
+									src='https://i.ibb.co/k9JvLS0/tesla-Car3-1.jpg'
 								/>
 							</div>
 							<h2 className ='title-font text-2xl font-medium text-white mt-6 mb-3'>
@@ -18,7 +18,8 @@ const UniqueSection = () => {
 							</h2>
 							<p className ='leading-relaxed text-base'>
                                 Model: Corolla X-2020 <br />
-                                Years: @2006
+                                Years: @2006 <br />
+								Email: www.carhouse@yahoo.com
 							</p>
 							<button className ='flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded'>
 								More
@@ -29,7 +30,7 @@ const UniqueSection = () => {
 								<img
 									alt='content'
 									className ='object-cover object-center h-full w-full'
-									src='https://i.ibb.co/h824Lxv/corolla5.jpg'
+									src='https://i.ibb.co/9rFTwwc/tesla-Car2-1.jpg'
 								/>
 							</div>
 							<h2 className ='title-font text-2xl font-medium text-white mt-6 mb-3'>
@@ -37,7 +38,8 @@ const UniqueSection = () => {
 							</h2>
 							<p className ='leading-relaxed text-base'>
 								Model: Tesla <br />
-                                Years: 2008
+                                Years: 2008 <br />
+								Email: www.carhouse@yahoo.com
 							</p>
 							<button className ='flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded'>
 								More
